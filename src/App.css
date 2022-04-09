@@ -1,0 +1,25 @@
+/*
+.App {
+  text-align: center;
+}
+backgroundImage: `url(${background})`,
+            backgroundPosition: 'center',
+            backgroundCover: 'cover',
+            backgroundRepeat: 'no-repeat',
+            height: '100vh'
+
+*/
+.footer {
+  background-image: url('./background.png');
+  background-position: 'center';
+  background-repeat: 'no-repeat';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /*margin-top: 3em;
+  margin-bottom: 3em;*/
+}
+
+.footer img {
+  width: 50%;
+}
