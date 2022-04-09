@@ -1,5 +1,5 @@
 import Form from '../components/Form';
-import background from '../background.png';
+import background from '../content/images/background.png';
 
 const LoginPage = () => {
     return(
