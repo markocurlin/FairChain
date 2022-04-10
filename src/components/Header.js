@@ -10,6 +10,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
 import image from '../content/images/image.png';
 
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as actionType from '../constants/actionTypes';
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -53,6 +57,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch({ type: actionType.LOGOUT });
+    navigate('/');
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -74,7 +87,7 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <IconButton>
+          <IconButton onClick={handleLogout}>
             <LogoutIcon sx={{ marginLeft: '20px', color: 'white' }}/>
           </IconButton>
         </Toolbar>

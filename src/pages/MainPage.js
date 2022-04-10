@@ -11,18 +11,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
-const user1 = {
-        frist_name: 'Ante',
-        last_name: 'Antić',
-        country: 'Hrvatska',
-        city: 'Split',
-        adress: 'Gunduliceva 7',
-        birth: '22.04.1997',
-        oib: '554234331'
-}
 
 const MainPage = () => {
-    const [user, setUser] = useState(user1);
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     return (
         <>

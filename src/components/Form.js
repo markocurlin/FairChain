@@ -10,8 +10,24 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import image from '../content/images/image.png';
 
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signin } from '../actions/auth';
 
 const Form = () => {
+    /*
+        sx={{ width:'400px', height: '450px', borderRadius: '15px' }}
+    */
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+            dispatch(signin(
+                {
+                // Form data
+                }, navigate));
+        };
+
     return (
       <>
         <Container>
@@ -35,7 +51,7 @@ const Form = () => {
                         </Grid>
                         <Grid item xs={12} md={12}>
                             <Link to='main' style={{ textDecoration: 'none' }}>
-                                <Button variant="contained">Sign in</Button>
+                                <Button onClick={handleSubmit} variant="contained">Sign in</Button>
                             </Link>
                         </Grid>
                     </Grid>
