@@ -22,7 +22,7 @@ const Form = () => {
                 <Grid item textAlign='center'>  
                     <img src={image} alt='image' style={{ width:'50%', marginTop: '70px', marginBottom: '20px'}}/>
                 </Grid> 
-                <Paper sx={{  display: 'flex', alignItems: 'center', width:'400px', height: '450px', borderRadius: '15px' }} evelation={3}>
+                <Paper sx={{  display: 'flex', alignItems: 'center', width:'350px', height: '400px', borderRadius: '15px' }} evelation={3}>
                     <Grid container item textAlign='center' spacing={2}>
                         <Grid item xs={12} md={12}>
                             <Typography variant='h4'>Sign In</Typography>
