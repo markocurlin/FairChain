@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Table from '../components/Table';
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -8,6 +9,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlockchain } from '../actions/blockchain';
@@ -29,9 +32,9 @@ const MainPage = () => {
     return (
         <>
             <Header />
-            <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+            <Container component="main" maxWidth="sm" sx={{ display: 'flex', mb: 4 }}>    
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                    <Grid container>
+                    <Grid container >
                         <Grid item xs={12} md={12}>
                             <Typography variant='h4'>Ime: {user.frist_name}</Typography>
                         </Grid>
@@ -59,11 +62,13 @@ const MainPage = () => {
                     </Grid>
                 </Paper>
             </Container>
-            
-            <Divider />
-
+            <Container sx={{ marginBottom: '3em' }}>
+                {blockchain.isLoading ? <Box sx={{ textAlign: 'center' }}><CircularProgress /></Box> : <Table 
+                    data={blockchain.blockchain[0].transactions} 
+                    address={user.address}
+                />}
+            </Container>
             <Footer />
-        
         </>
     );
 }

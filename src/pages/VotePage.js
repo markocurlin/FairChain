@@ -64,7 +64,6 @@ const VotePage = () => {
                     </Paper>
                 </Grid>
             </Container>
-
             <Footer />
         </div>
     );
