@@ -3,7 +3,6 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -76,7 +75,7 @@ export default function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
         >
-            <img src={image} alt='image' style={{ width:'10%' }}/>
+            <img src={image} alt='logo' style={{ width:'10%' }}/>
         </Box>
           <Search>
             <SearchIconWrapper>

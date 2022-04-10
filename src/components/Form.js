@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -33,7 +32,7 @@ const Form = () => {
         <Container>
             <Grid container justifyContent='center' textAlign='center'>
                 <Grid item textAlign='center'>  
-                    <img src={image} alt='image' style={{ width:'40%', marginTop: '70px', marginBottom: '20px'}}/>
+                    <img src={image} alt='logo' style={{ width:'40%', marginTop: '70px', marginBottom: '20px'}}/>
                 </Grid> 
                 <Paper sx={{  display: 'flex', alignItems: 'center', width:'350px', height: '360px', borderRadius: '15px' }} evelation={3}>
                     <Grid container item textAlign='center' spacing={2}>
