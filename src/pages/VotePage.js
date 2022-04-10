@@ -11,10 +11,23 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import pecat from '../content/images/pecat.png';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const political_party = [ 'HDZ', 'SDP', 'MOST', 'DOMOVINSKI POKRET', 'ŽIVI ZID', 'Pametno', 'HDS','HSS', 'HRAST'];
 
 const VotePage = () => {
+
+    const [voteState, setVote] = useState(false);
+    const navigate = useNavigate();
+    const handleVote = () => {
+        setVote(true);
+        setTimeout(() => {
+            navigate('/main');
+          }, 2000);
+    };
+
     return (
         <div style={{
             backgroundColor: 'white',
@@ -27,13 +40,16 @@ const VotePage = () => {
             
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Grid container justifyContent='center'>
-                    <Paper variant="outlined" sx={{ width: '900px', my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                 <Paper variant="outlined" sx={{ width: '900px', my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                         <Grid container item spacing={3}>
                             <Grid item xs={12} md={12} textAlign='center'>
                                 <Typography variant='h4'>GLASAČKI LISTIĆ</Typography>
                                 <Typography variant='h5'>ZA IZBOR ZASTUPNIKA U HRVATSKI SABOR NA KOJEM SE GLASUJE ZA JEDNU OD LISTA </Typography>
                                 <Typography variant='h6' sx={{ fontWeight: 'bold' }}>X. IZBORNE JEDINICE</Typography>
                             </Grid>
+
+                            { !voteState ? (
+                        <>
                             <Grid item xs={12} md={12} textAlign='left'>
                                 <Divider sx={{ marginBottom: '2em' }}/>
                                 <Typography variant='body1' sx={{ fontWeight: 'bold' }}>VAŽNA NAPOMENA</Typography>
@@ -54,8 +70,17 @@ const VotePage = () => {
                                 <Divider sx={{ marginTop: '2em' }}/>
                             </Grid>
                             <Grid item xs={12} md={12} textAlign='center'>
-                                <Button variant='contained'>Potvrdi</Button>
+                                <Button onClick={handleVote} variant='contained'>Potvrdi</Button>
                             </Grid>  
+                            </>
+                         ) : (
+                            <Grid item xs={12} md={12} textAlign='left'>
+                                <Divider sx={{ marginBottom: '2em' }}/>
+                                    <Typography variant='body1' sx={{ fontWeight: 'bold' }}>Uspješno ste glasovali!</Typography>
+                                    <Typography variant='body2'>Zahvaljujemo na ispunjavanju Vaše građanske dužnosti.</Typography>
+                                <Divider sx={{ marginTop: '2em' }}/>
+                            </Grid>
+                            ) }
                             <Grid item xs={12} md={12} textAlign='center'>
                                 <img src={pecat} alt='pecat' style={{ width: '20%'}}/>
                                 <Typography variant='body2'>Serijski broj: 0018368</Typography>
