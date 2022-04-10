@@ -9,14 +9,13 @@ import image from '../content/images/image.png';
 const Footer = () => {
     return (
         <Box className="footer">
-            <Divider/>
             <Container sx={{ marginTop: '1em', marginBottom: '1em' }}>
-                <Grid container justifyContent='center' alignItems='center' spacing={3}>
-                    <Grid item sx={{ textAlign: { xs: 'center', md: 'left' } }} xs={12} md={4}>
+                <Grid container textAlign='center' justifyContent='center' alignItems='center' spacing={3}>
+                    <Grid item xs={12} md={4}>
                         <Link to="/" style={{ textDecoration: 'none' , color: "white"}} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth'})}}>
                             <img src={image} alt='image'></img>
                         </Link>
-                        <Typography sx={{ color: 'white' }} variant='body2'>Copyright 2022, all right reserved.</Typography>
+                        <Typography variant='body2' sx={{ color: 'white' }}>Copyright 2022, all right reserved.</Typography>
                     </Grid>
                 </Grid>     
             </Container>

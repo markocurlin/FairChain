@@ -11,5 +11,5 @@ export const fetchBlockchain = () => (dispatch) => {
       type: ActionTypes.LOAD_BLOCKCHAIN,
       payload: BLOCKCHAIN,
     });
-  }, 300);
+  }, 1500);
 };
