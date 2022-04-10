@@ -13,8 +13,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import pecat from '../content/images/pecat.png';
 
-const political_party = [ 'HDZ', 'SDP', 'MOST', 'DOMOVINSKI POKRET', 'ŽIVI ZID'];
+const political_party = [ 'HDZ', 'SDP', 'MOST', 'DOMOVINSKI POKRET', 'ŽIVI ZID', 'Pametno', 'HDS','HSS', 'HRAST'];
 
 const VotePage = () => {
     return (
@@ -29,16 +30,18 @@ const VotePage = () => {
             
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Grid container justifyContent='center'>
-                    <Paper variant="outlined" sx={{ width: '900px', height: '800px', my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                        <Grid container item spacing={5}>
+                    <Paper variant="outlined" sx={{ width: '900px', my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                        <Grid container item spacing={3}>
                             <Grid item xs={12} md={12} textAlign='center'>
                                 <Typography variant='h4'>GLASAČKI LISTIĆ</Typography>
                                 <Typography variant='h5'>ZA IZBOR ZASTUPNIKA U HRVATSKI SABOR NA KOJEM SE GLASUJE ZA JEDNU OD LISTA </Typography>
                                 <Typography variant='h6' sx={{ fontWeight: 'bold' }}>X. IZBORNE JEDINICE</Typography>
                             </Grid>
                             <Grid item xs={12} md={12} textAlign='left'>
+                                <Divider sx={{ marginBottom: '2em' }}/>
                                 <Typography variant='body1' sx={{ fontWeight: 'bold' }}>VAŽNA NAPOMENA</Typography>
                                 <Typography variant='body2'>Glasački listić ispunjava se tako da se ispuni samo jedan kružić ispred naziva jedne liste za koju se glasuje.</Typography>
+                                <Divider sx={{ marginTop: '2em' }}/>
                             </Grid>
                             <Grid item xs={12} md={12} textAlign='center'>
                                 <FormControl>
@@ -51,10 +54,15 @@ const VotePage = () => {
                                         })}
                                     </RadioGroup>
                                 </FormControl>
+                                <Divider sx={{ marginTop: '2em' }}/>
                             </Grid>
                             <Grid item xs={12} md={12} textAlign='center'>
                                 <Button variant='contained'>Potvrdi</Button>
                             </Grid>  
+                            <Grid item xs={12} md={12} textAlign='center'>
+                                <img src={pecat} alt='pecat' style={{ width: '20%'}}/>
+                                <Typography variant='body2'>Serijski broj: 0018368</Typography>
+                            </Grid>
                         </Grid>
                     </Paper>
                 </Grid>
