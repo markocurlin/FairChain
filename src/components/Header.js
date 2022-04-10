@@ -3,10 +3,10 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
+import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
 import image from '../content/images/image.png';
 
@@ -57,16 +57,6 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          {/*<IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-  */}
         <Box
             variant="h6"
             noWrap
@@ -84,6 +74,9 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <IconButton>
+            <LogoutIcon sx={{ marginLeft: '20px', color: 'white' }}/>
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>
