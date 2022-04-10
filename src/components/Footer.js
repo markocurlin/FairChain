@@ -12,7 +12,7 @@ const Footer = () => {
             <Container sx={{ marginTop: '1em', marginBottom: '1em' }}>
                 <Grid container textAlign='center' justifyContent='center' alignItems='center' spacing={3}>
                     <Grid item xs={12} md={4}>
-                        <Link to="/" style={{ textDecoration: 'none' , color: "white"}} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth'})}}>
+                        <Link to="/main" style={{ textDecoration: 'none' , color: "white"}} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth'})}}>
                             <img src={image} alt='logo'/>
                         </Link>
                         <Typography variant='body2' sx={{ color: 'white' }}>Copyright 2022, all right reserved.</Typography>
