@@ -32,33 +32,23 @@ const MainPage = () => {
     return (
         <>
             <Header />
-            <Container component="main" maxWidth="sm" sx={{ display: 'flex', mb: 4 }}>    
+            <Container component="main" maxWidth="sm" sx={{ justifyContent: 'center', display: 'flex', mb: 4 }}>    
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                    <Grid container >
+                    <Grid container justifyContent='center' spacing={3}>
                         <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Ime: {user.frist_name}</Typography>
+                            <Typography variant='h5'>Ime: {user.frist_name}</Typography>
+                            <Typography variant='h5'>Prezime: {user.last_name} </Typography>
+                            <Typography variant='h5'>Hrvatska: {user.country}</Typography>
+                            <Typography variant='h5'>Split: {user.city}</Typography>
+                            <Typography variant='h5'>Adresa: {user.adress}</Typography>
+                            <Typography variant='h5'>Rođenje: {user.birth}</Typography>
+                            <Typography variant='h5'>OIB: {user.oib}</Typography>
                         </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Prezime: {user.last_name} </Typography>
+                        <Grid item xs={12} md={12} textAlign='center'>
+                            <Link to='/vote' style={{ textDecoration: 'none' }}>
+                                <Button variant='contained'>Potvrdi</Button>
+                            </Link>
                         </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Hrvatska: {user.country}</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Split: {user.city}</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Adresa: {user.adress}</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Rođenje: {user.birth}</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>OIB: {user.oib}</Typography>
-                        </Grid>
-                        <Link to='/vote' style={{ textDecoration: 'none' }}>
-                            <Button variant='contained'>Potvrdi</Button>
-                        </Link>
                     </Grid>
                 </Paper>
             </Container>
