@@ -9,6 +9,12 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+
+const political_party = [ 'HDZ', 'SDP', 'MOST', 'DOMOVINSKI POKRET', 'ŽIVI ZID'];
 
 const VotePage = () => {
     return (
@@ -22,39 +28,39 @@ const VotePage = () => {
             <Header />
             
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                    <Grid container>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h3'>GLASAČKI LISTIĆ</Typography>
-                            <Typography variant='h4'>za izbor zastupnica / zastupnicau h</Typography>
+                <Grid container justifyContent='center'>
+                    <Paper variant="outlined" sx={{ width: '900px', height: '800px', my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                        <Grid container item spacing={5}>
+                            <Grid item xs={12} md={12} textAlign='center'>
+                                <Typography variant='h4'>GLASAČKI LISTIĆ</Typography>
+                                <Typography variant='h5'>ZA IZBOR ZASTUPNIKA U HRVATSKI SABOR NA KOJEM SE GLASUJE ZA JEDNU OD LISTA </Typography>
+                                <Typography variant='h6' sx={{ fontWeight: 'bold' }}>X. IZBORNE JEDINICE</Typography>
+                            </Grid>
+                            <Grid item xs={12} md={12} textAlign='left'>
+                                <Typography variant='body1' sx={{ fontWeight: 'bold' }}>VAŽNA NAPOMENA</Typography>
+                                <Typography variant='body2'>Glasački listić ispunjava se tako da se ispuni samo jedan kružić ispred naziva jedne liste za koju se glasuje.</Typography>
+                            </Grid>
+                            <Grid item xs={12} md={12} textAlign='center'>
+                                <FormControl>
+                                    <RadioGroup
+                                        >
+                                            {political_party.map(party => {
+                                                return(
+                                                    <FormControlLabel value={party} control={<Radio />} label={party} />
+                                                )
+                                        })}
+                                    </RadioGroup>
+                                </FormControl>
+                            </Grid>
+                            <Grid item xs={12} md={12} textAlign='center'>
+                                <Button variant='contained'>Potvrdi</Button>
+                            </Grid>  
                         </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Ime:</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Prezime:</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Hrvatska:</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Split:</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Adresa: </Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>Rođenje:</Typography>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Typography variant='h4'>OIB:</Typography>
-                        </Grid>
-                        <Link to='/vote' style={{ textDecoration: 'none' }}>
-                            <Button variant='contained'>Potvrdi</Button>
-                        </Link>
-                    </Grid>
-                </Paper>
+                    </Paper>
+                </Grid>
             </Container>
+
+            <Footer />
         </div>
     );
 }
