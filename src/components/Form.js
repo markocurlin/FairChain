@@ -41,13 +41,13 @@ const Form = () => {
                             <Typography variant='h4'>Sign In</Typography>
                         </Grid>
                         <Grid item xs={12} md={12}>
-                            <TextField id="outlined-basic" label="Personal ID" variant="outlined" sx={{ width: '300px' }}/>
+                            <TextField id="outlined-basic-id" label="Personal ID" variant="outlined" sx={{ width: '300px' }}/>
                         </Grid>
                         <Grid item xs={12} md={12}>
-                            <TextField id="outlined-basic" label="Password" type='password' variant="outlined" sx={{ width: '300px' }}/>
+                            <TextField id="outlined-basic-pass" label="Password" type='password' variant="outlined" sx={{ width: '300px' }}/>
                         </Grid>
                         <Grid item xs={12} md={12}>
-                            <FormControlLabel control={<Checkbox defaultUnChecked />} label="Remember me" />
+                            <FormControlLabel control={<Checkbox defaultunchecked='true' />} label="Remember me" />
                         </Grid>
                         <Grid item xs={12} md={12}>
                             <Link to='main' style={{ textDecoration: 'none' }}>

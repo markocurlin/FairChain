@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
@@ -11,9 +11,22 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBlockchain } from '../actions/blockchain';
+
 
 const MainPage = () => {
     const user = JSON.parse(localStorage.getItem('profile'));
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(fetchBlockchain());
+    }, [dispatch]);
+
+    const { blockchain } = useSelector((state) => state);
+
+    console.log(blockchain);
 
     return (
         <>

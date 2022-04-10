@@ -47,9 +47,9 @@ const VotePage = () => {
                                 <FormControl>
                                     <RadioGroup
                                         >
-                                            {political_party.map(party => {
+                                            {political_party.map((party,index) => {
                                                 return(
-                                                    <FormControlLabel value={party} control={<Radio />} label={party} />
+                                                    <FormControlLabel key={index} value={party} control={<Radio />} label={party} />
                                                 )
                                         })}
                                     </RadioGroup>
